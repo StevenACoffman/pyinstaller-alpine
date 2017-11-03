@@ -23,14 +23,14 @@ mounted as a volume at `/src`:
 
     docker run --rm \
         -v "${PWD}:/src" \
-        inn0kenty/pyinstaller-alpine \
+        stevenacoffman/pyinstaller-alpine \
         --noconfirm \
         --onefile \
         --log-level DEBUG \
         --clean \
         example.py
 
-If either a `requirements.txt` or `setup.py` file is found in your source directory, the 
+If either a `requirements.txt` or `setup.py` file is found in your source directory, the
 requirements will automatically be installed with `pip`.        
 
 This will output a built app to the `dist` sub-directory in your source
@@ -49,7 +49,7 @@ parameter. A non-standard feature of this Docker image is that you can use
 
     docker run --rm \
         -v "${PWD}:/src" \
-        inn0kenty/pyinstaller-alpine \
+        stevenacoffman/pyinstaller-alpine \
         --onefile \
         --random-key \
         --clean \
@@ -65,7 +65,7 @@ for consistent randomization for internal data structures:
     docker run --rm \
         -v "${PWD}:/src" \
         -e PYTHONHASHSEED=42 \
-        inn0kenty/pyinstaller-alpine \
+        stevenacoffman/pyinstaller-alpine \
         --onefile \
         --clean \
         example.py
